@@ -22,17 +22,3 @@ Coba perhatikan kembali \lstlistingname~\ref{lst:ulang} di sub bab \ref{sec:kond
 
 \lstinputlisting[language=python, numbers=left, numberstyle=\tiny, caption=Menghentikan perulangan ketika didapati operasi yang tidak valid, showstringspaces=false, label=lst:error]{script/tangkapError.py}
 
-\section{Jejak pencarian}
-Modul yang sebelumnya dibuat diletakkan di \textit{directory} yang sama dengan \textit{script} yang akan menggunakannya. Ketika lokasinya berbeda, maka modul tidak dapat digunakan. Agar dapat digunakan oleh \textit{script} di lokasi manapun, kita bisa meletakkan modul di lokasi standar dari modul. Dan untuk mengetahuinya, dapat dilakukan dengan menjalankan dua baris perintah berikut.
-
-\texttt{>>> import sys}
-
-\texttt{>>> sys.path}
-
-Hasilnya adalah \texttt{list} yang berisi lokasi standar dari modul. Kita bisa meletakkan modul kita di lokasi tersebut. Sayangnya, lokasi tersebut umumnya memiliki kewenangan \texttt{root} untuk mengaksesnya sehingga kita tidak dapat melakukannya jika kita tidak memiliki hak akses \texttt{root}. Untuk kondisi ini, kita dapat menambahkan lokasi modul dengan \textit{directory user} kita. Karena dua perintah di atas menghasilkan \texttt{list}, kita bisa melakukan operasi \texttt{append} seperti contoh berikut.
-
-\texttt{>>> import sys}
-
-\texttt{>>> sys.path.append('/home/arya/Kuliah/PythonBasic/script/)}
-
-Dengan demikian, semua \textit{script} Python yang ada di \textit{directory} tersebut dapat digunakan sebagai modul dari lokasi mana saja. Tetapi perlu diingat bahwa proses ini tidak permanen, hanya pada saat \textit{script} tersebut dieksekusi.

@@ -44,3 +44,18 @@ Pada kondisi lain, kita mungkin saja perlu melakukan pengujian terhadap modul ya
 \figurename~\ref{fig:modulUji} menunjukkan bahwa fungsi \texttt{faktorial} dipanggil dua kali, masing-masing dari fungsi uji di luar modul dan fungsi uji di dalam modul. Untuk mengatasinya, perhatikan \lstlistingname~\ref{lst:faktorial5}. Dengan penambahan baris ke-8 di \lstlistingname~\ref{lst:faktorial5}, fungsi uji yang didefinisikan di modul tidak akan dieksekusi ketika modul tersebut sedang digunakan \textit{script} lain. \lstlistingname~\ref{lst:faktorial5} juga tampil lebih efisien dalam penulisan karena fungsi rekursif (pemanggilan fungsi itu sendiri) seperti ditunjukkan di baris ke-6.
 
 \lstinputlisting[language=python, numbers=left, numberstyle=\tiny, caption=Modul \texttt{faktorial} lengkap dengan fungsi ujinya dan fungsi \texttt{main}, showstringspaces=false, label=lst:faktorial5]{script/faktorial5.py}
+
+\section{Jejak pencarian}
+Modul yang sebelumnya dibuat diletakkan di \textit{directory} yang sama dengan \textit{script} yang akan menggunakannya. Ketika lokasinya berbeda, maka modul tidak dapat digunakan. Agar dapat digunakan oleh \textit{script} di lokasi manapun, kita bisa meletakkan modul di lokasi standar dari modul. Dan untuk mengetahuinya, dapat dilakukan dengan menjalankan dua baris perintah berikut.
+
+\texttt{>>> import sys}
+
+\texttt{>>> sys.path}
+
+Hasilnya adalah \texttt{list} yang berisi lokasi standar dari modul. Kita bisa meletakkan modul kita di lokasi tersebut. Sayangnya, lokasi tersebut umumnya memiliki kewenangan \texttt{root} untuk mengaksesnya sehingga kita tidak dapat melakukannya jika kita tidak memiliki hak akses \texttt{root}. Untuk kondisi ini, kita dapat menambahkan lokasi modul dengan \textit{directory user} kita. Karena dua perintah di atas menghasilkan \texttt{list}, kita bisa melakukan operasi \texttt{append} seperti contoh berikut.
+
+\texttt{>>> import sys}
+
+\texttt{>>> sys.path.append('/home/arya/Kuliah/PythonBasic/script/)}
+
+Dengan demikian, semua \textit{script} Python yang ada di \textit{directory} tersebut dapat digunakan sebagai modul dari lokasi mana saja. Tetapi perlu diingat bahwa proses ini tidak permanen, hanya pada saat \textit{script} tersebut dieksekusi.
