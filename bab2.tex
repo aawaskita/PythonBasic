@@ -146,5 +146,176 @@ Kita juga dapat mengeluarkan sebuah elemen dari variabel \texttt{dictionary}. Ka
   \end{center}
 \end{figure}
 
-\section{Operasi Aritmatika}
-\section{Operasi Logika}
+\section{Operator}
+\subsection{Aritmatika}
+\tablename~\ref{tab:aritmatika} berisi operator aritmatika yang dimiliki Python\footnote{\url{https://www.w3schools.com/python/python_operators.asp}}. Untuk menggunakannya, variabel \texttt{a} dan \texttt{b} pada \tablename~\ref{tab:aritmatika} harus berjenis yang sama. Perhatikan \figurename~\ref{fig:aritmatika}. Tentunya, operasi seperti itu hanya berlaku untuk operator penjumlahan karena karakter memang tidak dapat menerima operator aritmatika.
+
+\begin{table}[h]
+\caption{Operator aritmatika di Python}
+\label{tab:aritmatika}
+  \begin{center}
+    \begin{tabular}{@{}ccc@{}}\toprule
+    %\hline
+    Operator & Nama  & Contoh\\ \midrule
+  +  & Penjumlahan & a+b \\ 
+  - & Pengurangan & a-b \\
+  * & Perkalian & a*b\\
+  / & Pembagian & a/b\\
+  \% & Modulus & a\%b \\
+  ** & Eksponensial & a**b \\
+  \multirow{2}{*}{//} & Pembagian dengan & \multirow{2}{*}{a//b} \\
+  & pembulatan ke bawah & \\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/tambahchar.png}
+    \caption{Operasi aritmatika}
+    \label{fig:aritmatika}
+  \end{center}
+\end{figure}
+
+\figurename~\ref{fig:pembagian} menunjukkan contoh operasi aritmatika pembagian. Karena tidak didefinisikan secara eksplisit melalui jenis variabel, maka nilai sebuah variabel akan menjadi penentu jenisnya. Tetapi, meski variabel \texttt{a} dan \texttt{b} berjenis \texttt{int}, hasil pembagian tetap berjenis \texttt{float}. Ini adalah fitur dari Python \texttt{3.x}. Di Python \texttt{2.x}, salah satu variabel harus diberi nilai dari jenis \texttt{float} untuk menghasilkan nilai yang juga berjenis \texttt{float}. Perhatikan \figurename~\ref{fig:pembagian2}.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/pembagian.png}
+    \caption{Operator pembagian pada variabel berjenis \texttt{int} pada Python \texttt{3.x}}
+    \label{fig:pembagian}
+  \end{center}
+\end{figure}
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/pembagian2.png}
+    \caption{Operator pembagian pada variabel berjenis \texttt{int} pada Python \texttt{2.x}}
+    \label{fig:pembagian2}
+  \end{center}
+\end{figure}
+
+\subsection{Penugasan}
+\tablename~\ref{tab:assignment} menunjukkan operator penugasan (\textit{assignment}) yang dimiliki Python.
+
+\begin{table}[h]
+\caption{Operator penugasan di Python}
+\label{tab:assignment}
+  \begin{center}
+    \begin{tabular}{@{}ccc@{}}\toprule
+    %\hline
+    Operator & Contoh & Bentuk lain\\ \midrule
+    = & x=7.5 & x=7.5\\
+    += & x+=2 & x=x+2 \\
+    -= & x-=2 & x=x-2\\
+    *= & x*=3.1 & x=x*3.1\\
+    /= & x/=5 & x=x/5\\
+    \%= & x\%=2 & x=x\%2\\
+    //= & x//=2 & x=x//2\\
+    **= & x**=3 & x=x**3\\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\subsection{Perbandingan}
+Operator perbandingan digunakan untuk menyatakan terjadinya kondisi tertentu. Perhatikan lagi sub bab \ref{sec:kondisi}. \tablename~\ref{tab:perbandingan} menunjukkan operator perbandingan yang dimiliki Python. 
+
+\begin{table}[h]
+\caption{Operator perbandingan di Python}
+\label{tab:perbandingan}
+  \begin{center}
+    \begin{tabular}{@{}clc@{}}\toprule
+    %\hline
+    Operator & Fungsi  & Contoh\\ \midrule
+    == & Kesamaan & a==b \\
+    != & Ketidaksamaan & a!=b \\
+    $<$ & Lebih kecil dari & $a<b$ \\
+    $>$ & Lebih besar dari & $a>b$ \\
+    $<=$ & Lebih kecil dari atau sama dengan & $a<=$ \\
+    $>=$ & Lebih besar dari atau sama dengan & $a>=$ \\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\subsection{Logika}
+\tablename~\ref{tab:logika} menunjukkan operator logika yang dimiliki Python.
+
+\begin{table}[h]
+\caption{Operator logika di Python}
+\label{tab:logika}
+  \begin{center}
+    \begin{tabular}{@{}cll@{}}\toprule
+    %\hline
+    Operator & Deskripsi  & Contoh\\ \midrule
+    \texttt{and} & \texttt{True} jika kedua pernyataan \texttt{True} & a==2 \texttt{and} b==3 \\
+    \texttt{or} & \texttt{True} jika salah satu pernyataan \texttt{True} & a==2 \texttt{or} b==3 \\
+    \multirow{2}{*}{\texttt{not}} & \multirow{2}{*}{Negasi} & \texttt{not}(a==2 \texttt{and} b==3) \\
+     & & (tergantung nilai logika awal) \\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\subsection{Identitas}
+\tablename~\ref{tab:identitas} menunjukkan operator identitas yang dimiliki Python.
+
+\begin{table}[h]
+\caption{Operator identitas di Python}
+\label{tab:identitas}
+  \begin{center}
+    \begin{tabular}{@{}llc@{}}\toprule
+    %\hline
+    Operator & Fungsi  & Contoh\\ \midrule
+    \multirow{2}{*}{\texttt{is}} & \texttt{True} jika kedua variabel merujuk  & \multirow{2}{*}{a \texttt{is} b} \\
+    & pada obyek yang sama & \\
+    \multirow{2}{*}{\texttt{is not}} & \texttt{True} jika kedua variabel merujuk & \multirow{2}{*}{a \texttt{is not} b} \\
+    & pada obyek yang berbeda &\\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Perhatikan \figurename~\ref{fig:identitas}. Meski variabel \texttt{a} dab \texttt{b} bernilai sama (tentunya juga berjenis sama), tetapi mereka bukanlah obyek yang sama. Sehingga evaluasi menggunakan operator \texttt{is} menghasilkan nilai berbeda. Bandingkan dengan apa yang ditunjukkan \figurename~\ref{fig:identitas2}. Karena variabel \texttt{b} mengacu pada variabel \texttt{a}, maka evaluasi identitas \texttt{a} dan \texttt{b} menghasilkan nilai yang sama.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/identitas.png}
+    \caption{Perbedaan respon evaluasi dua variabel berbeda dengan nilai yang sama}
+    \label{fig:identitas}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/identitas2.png}
+    \caption{Perbedaan respon evaluasi dua variabel identik dengan nilai yang sama}
+    \label{fig:identitas2}
+  \end{center}
+\end{figure}
+
+\subsection{Keanggotaan}
+\tablename~\ref{tab:anggota} menunjukkan operator keanggotaan yang dimiliki Python.
+
+\begin{table}
+\caption{Operator keanggotaan di Python}
+\label{tab:anggota}
+  \begin{center}
+    \begin{tabular}{@{}llc@{}}\toprule
+    %\hline
+    Operator & Fungsi  & Contoh\\ \midrule
+    \multirow{2}{*}{\texttt{in}} & \texttt{True} jika nilai tertentu  & \multirow{2}{*}{a \texttt{in} b} \\
+    & ada dalam obyek & \\
+    \multirow{2}{*}{\texttt{not in}} & \texttt{True} jika nilai tertentu & \multirow{2}{*}{a \texttt{is not} b} \\
+    & tidak ada dalam obyek &\\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Perhatikan \lstlistingname~\ref{lst:anggota}, di mana angka \texttt{7} yang di-\textit{assign} ke variabel \texttt{b} akan dicari di dalam list \texttt{a} yang berisi 20 angka yang diperoleh secara acak. Jika nilai \texttt{7} ada dalam \texttt{list a}, program akan mencetak teks \texttt{'Ada'}. Jika sebaliknya, program akan mencetak teks \texttt{'Tidak ada'}.
+
+\lstinputlisting[language=python, numbers=left, numberstyle=\tiny, caption=Mendefinisikan fungsi sederhana, showstringspaces=false, label=lst:anggota]{script/anggota.py}
