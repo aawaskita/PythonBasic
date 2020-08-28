@@ -29,7 +29,7 @@ Berikut adalah penjelasan perintah pada \lstlistingname~\ref{lst:bacairis} berda
   \item Baris ke-3: menyiapkan variabel \texttt{int} yang akan digunakan untuk menyimpan informasi total data.
   \item Baris ke-4: memulai perulangan untuk membaca berkas per baris melalui perintah \texttt{a.readlines()}. Jika hanya diperlukan untuk membaca satu baris saja, gunakan perintah \texttt{a.readline()}. Baris yang berhasil dibaca akan disimpan dalam variabel \texttt{baris}.
   \item Baris ke-5 \& 18: penanganan kesalahan yang disebabkan oleh kondisi berkas yang baris terakhirnya kosong sehingga tidak dapat diolah seperti baris lain di atasnya.
-  \item Baris ke-6: memisahkan baris yang dibaca berdasarkan pembatas (\textit{delimiter}) berupa karakter \texttt{,}. Hasilnya disimpan dalam \texttt{list} dengan nama \texttt{element}.
+  \item Baris ke-6: memisahkan baris yang dibaca berdasarkan pembatas (\textit{delimiter}) berupa karakter '\texttt{,}'. Hasilnya disimpan dalam \texttt{list} dengan nama \texttt{element}.
   \item Baris ke-7: membersihkan \texttt{element} terakhir dari karakter \escape{n}, dan menyimpannya dalan \texttt{list} dengan nama \texttt{kelas}. Nilai dari \texttt{kelas} yang akan digunakan disimpan di \texttt{kelas[0]}.
   \item Baris ke-8 s/d 11: blok kondisi yang ketika nilai kelas belum ada di variabel \texttt{jenis}, ia akan ditambahkan sebagai \texttt{key} dengan nilai \texttt{1}. Sedangkan jika sudah menjadi salah satu \texttt{key}, maka nilainya ditambah \texttt{1}.
   \item Baris ke-12 s/d 16: menampilkan isi dari baris yang sedang dibaca, yang sebelumnya telah dipisah-pisah ke layar. Sejatinya, perintah \texttt{print} menerima argumen \texttt{str}. Jika ada karakter/kata eksplisit akan ditampilkan bersama karakter/kata yang disimpan pada variabel, maka penulisannya perlu dibedakan, dan dihubungkan dengan operator \texttt{+}. Dari sini terlihat bahwa operator \texttt{+} tidak hanya dapat digunakan dalam operasi aritmatika. Khusus untuk variabel yang akan ditampilkan dengan perintah \texttt{print}, tetapi belum dalam bentuk \texttt{str} (seperti pada baris ke-12), maka perlu dilakukan transformasi. Perintah yang digunakan adalah \texttt{str}, sebagai target jenis variabel yang diperlukan. Jika pada kondisi tertentu, diperlukan untuk mengubah jenis variabel ke \texttt{int}, maka digunakan perintah yang sama dengan target jenis variabelnya, dalam hal ini \texttt{int}.
@@ -59,14 +59,32 @@ Selanjutnya, sebagai latihan kedua, dataset yang akan digunakan adalah dataset t
 
 \lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Menghitung total data untuk setiap kelas, showstringspaces=false, label=lst:catexplore]{script/categoryExplore.py}
 
-\section{Latihan}
-\subsection{Berkas tunggal}
-\lstlistingname~\ref{lst:bacairis} dibuat dengan asumsi bahwa dataset memiliki karakteristik sebagai berikut.
-\begin{itemize}
-  \item Tidak memiliki informasi kolom (\textit{column header}).
-  \item Memiliki 5 kolom, di mana kolom ke-5 adalah kelas data.
-\end{itemize}
-Modifikasi \lstlistingname~\ref{lst:bacairis} agar kita tidak perlu membuat asumsi tersebut. Maksudnya, dengan atau tanpa \textit{column header}, tanpa pengetahuan jumlah kolom adalah 5, kita dapat membaca berkas dan menampilkan informasi seperti yang diminta.
+\section{Modifikasi dataset}
+Yang dimaksud dengan modifikasi di sini adalah memilih bagian yang menarik untuk dianalisis. Sebagai contoh, salah satu dataset tentang keamanan siber\footnote{https://github.com/aawaskita/Cyber-Security-dataset/} memiliki fitur yang dapat dibagi menjadi beberapa kelompok. \lstlistingname~\ref{lst:featbased} mengilustrasikan bagaimana memisahkan data berdasarkan kelompok fitur tersebut. Kita bisa saja melakukan kajian tentang efektivitas penggunaan kelompok fitur yang berbeda terhadap akurasi suatu \textit{classifier}. Untuk dapat diklasifikasi, kolom kelas tetap disimpan di dataset untuk kelompok fitur berbeda.
 
-\subsection{Berkas jamak}
-Dataset\footnote{\url{https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/bot\_iot.php}} menyediakan informasi sub kelas. Sebagai contoh, kelas \texttt{UDP} memiliki sub kelas \texttt{Dos} dan \texttt{DDoS}. Sementara \lstlistingname~\ref{lst:catexplore} hanya menampilkan informasi jumlah data per kelas. Karena itu, modifikasi \lstlistingname~\ref{lst:catexplore} agar dapat secara otomatis menghitung jumlah data per kelas sekaligus per sub kelas dan menampilkannya di layar.
+\lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Memisahkan dataset ke dalam kelompok fitur yang berbeda, showstringspaces=false, label=lst:featbased]{script/featureBasedAttack.py}
+
+Penjelasan baris-baris perintah dari \lstlistingname~\ref{featbased} adalah sebagai berikut.
+\begin{enumerate}
+  \item Baris ke-1 s/d 6: membuat \texttt{pointer} ke berkas sumber (baris ke-1) maupun berkas target (baris ke-2 s/d 6). Kelompok fitur yang dimaksud masing-masing adalah diwakili oleh \texttt{pointer} yang dibuat di baris ke-2 s/d 6.
+  \item Baris ke-7 s/d 12: membuat penanda kolom di mana kelompok fitur diletakkan di berkas sumber. Sebagai contoh, fitur \textit{basic} disimpan di kolom 6 s/d 18. Maka, untuk mengambil data dari kelompok fitur \textit{basic}, gunakan data yang disimpan kolom 6 s/d 18.
+  \item Baris ke-13: memulai perulangan untuk membaca berkas baris per baris.
+  \item Baris ke-14: memisahkan baris yang dibaca berdasarkan pembatas (\textit{delimiter}) berupa karakter '\texttt{,}'. Hasilnya disimpan dalam \texttt{list} dengan nama \texttt{element}.
+  \item Baris ke-15: menyimpan data kelas yang disimpan di lokasi terkahir dari \texttt{element}.
+  \item Baris ke-16 s/d 21: mengambil data dari 5 kolom pertama sebagai data yang harus ada di setiap kelompk fitur.
+  \item Baris ke-23 s/d 25: mengambil data untuk kelompok fitur \textit{basic} dan diakhiri dengan menyimpan kelas data di kolom terakhir. Fungsi yang sama berlaku untuk
+  \begin{itemize}
+     \item baris ke-27 s/d 29 (untuk kelompok fitur \textit{content}),
+     \item baris ke-31 s/d 33 (untuk kelompok fitur \textit{time}),
+     \item baris ke-35 s/d 37 (untuk kelompok fitur \textit{general})
+     \item serta baris ke-39 s/d 41 (untuk kelompok fitur \textit{connection}).
+   \end{itemize}
+   \item Baris ke-43 s/d 48: menghapus \texttt{pointer} ke berkas yang telah digunakan.
+\end{enumerate} 
+
+\section{Latihan}
+\begin{enumerate}
+  \item Modifikasi \lstlistingname~\ref{lst:bacairis} agar dapat dijalankan tanpa perlu pengetahuan tentang jumlah kolom
+  \item Dataset\footnote{\url{https://www.unsw.adfa.edu.au/unsw-canberra-cyber/cybersecurity/ADFA-NB15-Datasets/bot\_iot.php}} menyediakan informasi sub kelas. Sebagai contoh, kelas \texttt{UDP} memiliki sub kelas \texttt{Dos} dan \texttt{DDoS}. Sementara \lstlistingname~\ref{lst:catexplore} hanya menampilkan informasi jumlah data per kelas. Karena itu, modifikasi \lstlistingname~\ref{lst:catexplore} agar dapat secara otomatis menghitung jumlah data per kelas sekaligus per sub kelas dan menampilkannya di layar.
+  \item Berdasarkan pengetahuan yang diperoleh dari \lstlistingname~\ref{lst:featbased}, bangun program sejenis yang mampu memisahkan data pada Latihan kedua yang hanya berisi data-data dari dua kelas terbesar. Pengetahuan tentang dua kelas terbesar diperoleh dari Latihan kedua.
+\end{enumerate}
