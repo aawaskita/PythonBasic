@@ -1,4 +1,21 @@
 \chapter{Interaksi Basisdata}
 \section{MySQL}
+%create user: create user 'arya'@'localhost' identified by '123456';
+%create database: create database iris;
+%grant user: grant all on 'iris.* to 'arya'@'localhost';
+%flush privileges;
+%create table irisdata (sepallength real(2,1), sepalwidth real(2,1), petallength real(2,1), petalwidth real(2,1), kelas varachr(15));
+Modifikasi \lstlistingname~\ref{lst:bacairis} sehingga menjadi seperti \lstlistingname~\ref{lst:insertiris}. Hasil ekseksinya ditunjukkan \figurename~\ref{fig:insertmysql}.
+ 
+\lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Membaca dataset iris dan menyimpannya di MySQL, showstringspaces=false, label=lst:insertiris]{script/insertiris.py} 
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/insertmysql.png}
+    \caption{Hasil dari proses memasukkan data ke server MySQL}
+    \label{fig:insertmysql}
+  \end{center}
+\end{figure}
 \section{PostgreSQL}
+%https://computingforgeeks.com/installing-postgresql-database-server-on-ubuntu/
 \section{MongoDB}
