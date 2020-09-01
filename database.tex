@@ -17,5 +17,18 @@ Modifikasi \lstlistingname~\ref{lst:bacairis} sehingga menjadi seperti \lstlisti
   \end{center}
 \end{figure}
 \section{PostgreSQL}
+Modifikasi \lstlistingname~\ref{lst:insertiris} sehingga menjadi seperti \lstlistingname~\ref{lst:insertirispg}. Hasil ekseksinya ditunjukkan \figurename~\ref{fig:insertpgsql}.
+
+\lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Membaca dataset iris dan menyimpannya di pgSQL, showstringspaces=false, label=lst:insertirispg]{script/insertirispg.py}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=2.0]{pics/insertpgsql.png}
+    \caption{Hasil dari proses memasukkan data ke server pgSQL}
+    \label{fig:insertpgsql}
+  \end{center}
+\end{figure}
+
 %https://computingforgeeks.com/installing-postgresql-database-server-on-ubuntu/
+%https://linuxhint.com/postgresql_installation_guide_ubuntu_20-04/
 \section{MongoDB}
