@@ -31,4 +31,35 @@ Modifikasi \lstlistingname~\ref{lst:insertiris} sehingga menjadi seperti \lstlis
 
 %https://computingforgeeks.com/installing-postgresql-database-server-on-ubuntu/
 %https://linuxhint.com/postgresql_installation_guide_ubuntu_20-04/
+%https://www.howtoforge.com/tutorial/ubuntu-postgresql-installation/
 \section{MongoDB}
+MongoDB adalah salah satu basisdata non-relasional yang menyimpan data berbasis dokumen. Bukan dokumen seperti berkas yang digunakan pengolah teks seperti Microsoft Word$\copyright$, tetapi JSON (\textit{JavaScript Object Notation}) seperti dilustrasikan \figurename~\ref{fig:jsonmongo}\footnote{\url{https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb}}.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=.75]{pics/JSONExamplePythonMongoDB.png}
+    \caption{Ilustrasi penyimpanan data berbasis dokumen oleh MongoDB}
+    \label{fig:jsonmongo}
+  \end{center}
+\end{figure}
+
+Sedangkan \tablename~\ref{tab:relasimongo} menunjukkan perbandingan konsep pada basisdata relasional terhadap basisdata non-relasional seperti MongoDB\footnote{\url{https://www.mongodb.com/blog/post/getting-started-with-python-and-mongodb}}.
+
+\begin{table}[h]
+\caption{Komparasi konsep basisdata relasional vs. non-relasional}
+\label{tab:relasimongo}
+  \begin{center}
+    \begin{tabular}{@{}cc@{}}\toprule
+    %\hline
+    Relasional & Non-relasional\\ \midrule
+  \textit{Database} & \textit{Database} \\ 
+  \textit{Table} & \textit{Collection} \\
+  \textit{Rows} & \textit{Documents}\\
+  \textit{Index} & \textit{Index}\\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+%https://www.geeksforgeeks.org/how-to-import-json-file-in-mongodb-using-python/
+%https://www.w3schools.com/python/python_mongodb_getstarted.asp
+%https://www.programiz.com/python-programming/json
