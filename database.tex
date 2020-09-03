@@ -60,6 +60,19 @@ Sedangkan \tablename~\ref{tab:relasimongo} menunjukkan perbandingan konsep pada 
     \end{tabular}
   \end{center}
 \end{table}
+
+Sebagai bahan latihan, kita akan menggunakan dataset yang digunakan dalam artikel \cite{peerreview}\footnote{\url{https://github.com/allenai/PeerRead}}. Perhatikan \lstlistingname~\ref{lst:readjson} yang bertujuan untuk mengeksplorasi struktur berkas json secara rekursif. Dari \lstlistingname~\ref{lst:readjson} kita dapat mengambil pasangan \textit{key}-\textit{value} dari struktur berkas json.
+
+\lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Mengeksplorasi struktur berkas json, showstringspaces=false, label=lst:readjson]{script/readjson.py}
+
+Setelah berhasil melakukan pembacaan berkas json, sekarang saatnya mencoba memasukkan data berkas json ke MongoDB. Perhatikan \lstlistingname~\ref{lst:savejson}.
+
+\lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Menyimpan berkas json ke MongoDB, showstringspaces=false, label=lst:savejson]{script/savemongo.py}
+
+ 
+
+
 %https://www.geeksforgeeks.org/how-to-import-json-file-in-mongodb-using-python/
 %https://www.w3schools.com/python/python_mongodb_getstarted.asp
 %https://www.programiz.com/python-programming/json
+%https://www.geeksforgeeks.org/python-mongodb-query/?ref=rp
