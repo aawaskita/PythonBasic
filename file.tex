@@ -68,7 +68,7 @@ Yang dimaksud dengan modifikasi di sini adalah memilih bagian yang menarik untuk
 
 \lstinputlisting[language=python, numbers=left, numberstyle=\small, caption=Memisahkan dataset ke dalam kelompok fitur yang berbeda, showstringspaces=false, label=lst:featbased]{script/featureBasedAttack.py}
 
-Penjelasan baris-baris perintah dari \lstlistingname~\ref{featbased} adalah sebagai berikut.
+Penjelasan baris-baris perintah dari \lstlistingname~\ref{lst:featbased} adalah sebagai berikut.
 \begin{enumerate}
   \item Baris ke-1 s/d 6: membuat \texttt{pointer} ke berkas sumber (baris ke-1) maupun berkas target (baris ke-2 s/d 6). Kelompok fitur yang dimaksud masing-masing adalah diwakili oleh \texttt{pointer} yang dibuat di baris ke-2 s/d 6.
   \item Baris ke-7 s/d 12: membuat penanda kolom di mana kelompok fitur diletakkan di berkas sumber. Sebagai contoh, fitur \textit{basic} disimpan di kolom 6 s/d 18. Maka, untuk mengambil data dari kelompok fitur \textit{basic}, gunakan data yang disimpan kolom 6 s/d 18.
